@@ -23,7 +23,8 @@ RSpec.describe UrlsController, :type => :controller do
 
     it "just fucking works" do
       visit root_path
-      fill_in("url_new", with: "http://www.google.com")
+      url = Url.create
+      expect(page).to have_content 'Thanks for using Shortener!'
     end
   end
 end
