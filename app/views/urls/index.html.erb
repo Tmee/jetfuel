@@ -1,8 +1,8 @@
 <div class="row">
   <h1>Shortener..er</h1>
-  <form data-abide>
+  <form id='url' data-abide>
     <%=form_for @url do |f|%>
-      <%= f.url_field :full_url, placeholder: "URL", id: 'url_new' %>
+      <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new' %>
       <%= f.submit "begin Shortener", class: 'button tiny round'%>
     <%end%><br>
   </form>

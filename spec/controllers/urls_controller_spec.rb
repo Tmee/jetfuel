@@ -14,16 +14,12 @@ RSpec.describe UrlsController, :type => :controller do
     end
 
     it "gives a URL to the shortener" do
-      fill_in "full_url", :with => "https://www.google.com"
+      within("//form[@id='url']") do
+      fill_in "url[full_url]", :with => "https://www.google.com"
+    end
     end
 
     it "is given a shortened url" do
-      expect(page).to have_content 'Thanks for using Shortener!'
-    end
-
-    it "just fucking works" do
-      visit root_path
-      url = Url.create
       expect(page).to have_content 'Thanks for using Shortener!'
     end
   end
