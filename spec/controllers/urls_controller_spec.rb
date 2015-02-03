@@ -1,0 +1,25 @@
+require 'rails_helper'
+
+RSpec.describe UrlsController, :type => :controller do
+
+
+# Given that I am an anonymous user of the system
+# When I visit the site
+# And give a URL to the service
+# Then I expect it to return a service shortened URL
+
+  describe "user can use the service" do
+
+    it "visits the site" do
+      visit root_path
+    end
+
+    it "gives a URL to the service" do
+
+    end
+
+    it "is given a shortened url" do
+
+    end
+  end
+end
