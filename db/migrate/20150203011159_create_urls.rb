@@ -1,7 +1,8 @@
 class CreateUrls < ActiveRecord::Migration
   def change
     create_table :urls do |t|
-      t.string :url
+      t.string :full_url
+      t.string :slug
 
       t.timestamps
     end

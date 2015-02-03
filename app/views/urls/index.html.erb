@@ -3,7 +3,15 @@
 
   <%=form_for @url do |f|%>
     <%= f.label :Url %>
-    <%= f.url_field :url %>
+    <%= f.url_field :full_url %>
     <%= f.submit %>
-  <%end%>
+  <%end%><br>
+
+
+  <% @urls.each do |url|%>
+    <div class="large-6 columns">
+     <%= url.full_url %>
+     <%= url.slug%>
+    </div>
+  <% end %>
 </div>
