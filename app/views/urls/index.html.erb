@@ -1,17 +1,19 @@
 <div class="row">
   <h1>Shortener..er</h1>
-
-  <%=form_for @url do |f|%>
-    <%= f.label :Url %>
-    <%= f.url_field :full_url %>
-    <%= f.submit %>
-  <%end%><br>
-
+  <form data-abide>
+    <%=form_for @url do |f|%>
+      <%= f.url_field :full_url, placeholder: "URL", id: 'url_new' %>
+      <%= f.submit "begin Shortener", class: 'button tiny round'%>
+    <%end%><br>
+  </form>
 
   <% @urls.each do |url|%>
     <div class="large-6 columns">
-     <%= url.full_url %>
-     <%= url.slug%>
+      <ul>
+        <li><%= url.id %></li>
+        <li><%= url.full_url %></li>
+        <li><%= url.slug%></li>
+      </ul>
     </div>
   <% end %>
 </div>
