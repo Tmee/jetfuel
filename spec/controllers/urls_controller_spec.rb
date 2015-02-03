@@ -4,7 +4,6 @@ RSpec.describe UrlsController, :type => :controller do
 
 
 # Given that I am an anonymous user of the system
-# When I visit the site
 # And give a URL to the service
 # Then I expect it to return a service shortened URL
 
@@ -15,7 +14,7 @@ RSpec.describe UrlsController, :type => :controller do
     end
 
     it "gives a URL to the service" do
-
+      fill_in "Url", :with => "https://www.google.com"
     end
 
     it "is given a shortened url" do

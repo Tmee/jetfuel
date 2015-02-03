@@ -1,1 +1,9 @@
-<h1></h1>
+<div class="row">
+  <h1>Shortener..er</h1>
+
+  <%=form_for @url do |f|%>
+    <%= f.label :Url %>
+    <%= f.url_field :url %>
+    <%= f.submit %>
+  <%end%>
+</div>
