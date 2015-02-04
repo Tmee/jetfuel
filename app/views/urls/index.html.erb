@@ -1,18 +1,15 @@
 <div class="row">
   <h1>Shortener..er</h1>
-  <form id='url' data-abide>
-    <%=form_for @url do |f|%>
+    <%=form_for Url.new do |f|%>
       <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new' %>
       <%= f.submit "begin Shortener", class: 'button tiny round'%>
     <%end%><br>
-  </form>
 
   <% @urls.each do |url|%>
-    <div class="large-6 columns">
+    <div class="large-6 columns panel">
       <ul>
-        <li><%= url.id %></li>
         <li><%= url.full_url %></li>
-        <li><%= url.slug%></li>
+        <li><%= link_to "shorterish link", "/#{url.slug}"%></li>
       </ul>
     </div>
   <% end %>

@@ -1,7 +1,6 @@
 class UrlsController < ApplicationController
 
   def index
-    @url ||= Url.new
     @urls = Url.all
   end
 
@@ -12,6 +11,11 @@ class UrlsController < ApplicationController
     else
       render :new, alert: "sorry, looks like something went wrong.  Try that again"
     end
+  end
+
+  def redirect
+    full_url = Url.find_by(slug: params[:slug])
+    redirect_to full_url[:full_url]
   end
 
 
