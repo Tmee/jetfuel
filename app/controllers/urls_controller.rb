@@ -21,7 +21,6 @@ class UrlsController < ApplicationController
 
   private
 
-
   def url_params
     params.require(:url).permit(:full_url, :slug)
   end
