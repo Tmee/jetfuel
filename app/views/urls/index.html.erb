@@ -1,1 +1,16 @@
-<h1>works</h1>
+<div class="row">
+  <h1>Shortener..er</h1>
+    <%=form_for Url.new do |f|%>
+      <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new' %>
+      <%= f.submit "begin Shortener", class: 'button tiny round'%>
+    <%end%><br>
+
+  <% @urls.each do |url|%>
+    <div class="large-6 columns panel">
+      <ul>
+        <li><%= url.full_url %></li>
+        <li><%= link_to "shorterish link", "/#{url.slug}"%></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
