@@ -11,7 +11,11 @@
         </div>
       </div><hr>
       <div class="row text-center">
-        <%= link_to "shorterish link", url_path(url.id), :onclick => "alert('Now Leaving Shortener')"%>
+        <% if url.title.size > 35%>
+          <%= link_to "#{truncate(url.title)} ...", url_path(url.id), :onclick => "alert('Now Leaving Shortener')"%>
+        <% else %>
+          <%= link_to "#{url.title}", url_path(url.id), :onclick => "alert('Now Leaving Shortener')"%>
+        <% end %>
       </div><br>
       <div class="row text-center">
         <%= url.full_url %>
