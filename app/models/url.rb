@@ -23,15 +23,19 @@ class Url < ActiveRecord::Base
 
   def set_favicon
     begin
-      h = full_url.scan(/^(.*)\/{2}/)
-      url = clean_end_of_url(format_url)
-      open("#{h[0][0]}//#{url}/favicon.ico")
-      self.favicon = "#{h[0][0]}//#{url}/favicon.ico"
+      open_url
+      self.favicon = "#{@http}//#{@url}/favicon.ico"
     rescue OpenURI::HTTPError => e
       if e.message == '404 Not Found'
         self.favicon = "shrink.png"
       end
     end
+  end
+
+  def open_url
+    @http = full_url.scan(/^(.*)\/{2}/)[0][0]
+    @url  = clean_end_of_url(format_url)
+    open("#{@http}//#{@url}/favicon.ico")
   end
 
   def format_url

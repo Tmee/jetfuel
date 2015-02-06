@@ -1,15 +1,4 @@
 <div class="row">
-  <div class="large-6 columns">
-    <h1>Shortener..er</h1>
-  </div>
-  <div class="large-6 columns">
-    <%= render partial: 'shared/search_bar'%>
-  </div>
-</div>
-<div class="row">
-    <%=form_for Url.new do |f|%>
-      <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new' %>
-      <%= f.submit "begin Shortener", class: 'button tiny round'%>
-    <%end%><br>
-    <%= render partial: 'urls_table'%>
+  <%= render partial: 'new_url'%>
+  <%= render partial: 'shared/urls_table'%>
 </div>
