@@ -16,3 +16,14 @@
 
 @import './foundation_and_overrides';
 @import 'foundation';
+
+
+.panel-fix {
+  height: 249px;
+  width: 275px;
+  overflow-y:scroll
+}
+
+.search {
+  padding-top: 30px;
+}

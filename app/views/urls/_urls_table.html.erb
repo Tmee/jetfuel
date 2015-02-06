@@ -1,0 +1,21 @@
+<% @urls.each do |url|%>
+  <div class="large-4 small-6 columns">
+    <div class="panel panel-fix">
+    <ul>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= image_tag "#{url.favicon}", size: "35x35"%>
+        </div>
+        <div class="large-6 columns">
+          <%= url.popularity %> Views
+        </div>
+      </div><hr>
+      <div class="row text-center">
+        <%= link_to "shorterish link", url_path(url.id), :onclick => "alert('Now Leaving Shortener')"%>
+      </div><br>
+      <div class="row text-center">
+        <%= url.full_url %>
+      </div>
+    </div>
+  </div>
+<% end %><br>

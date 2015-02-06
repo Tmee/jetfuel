@@ -2,7 +2,7 @@ class SearchController < ApplicationController
 
   def search
     @urls ||= url_search(params[:search])
-    render :results
+    render :index
   end
 
   def url_search(search)
