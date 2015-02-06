@@ -13,8 +13,8 @@ class Url < ActiveRecord::Base
   def set_title
     begin
       doc   = Nokogiri::HTML(open("#{full_url}"))
-      title = doc.xpath("//title").text
-      self.title = title
+      page_title = doc.xpath("//title").text
+      title = page_title
     rescue SocketError
     end
   end

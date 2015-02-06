@@ -9,7 +9,7 @@
     <div class="large-6 columns panel">
       <ul>
         <li><%= url.full_url %></li>
-        <li><a href="#" data-reveal-id="myModal"><%= link_to "shorterish link", url_path(url.id)%></a></li>
+        <li><a href="#" data-reveal-id="myModal"><%= link_to "shorterish link", url_path(url.id), :onclick => "alert('Now Leaving Shortener')"%></a></li>
         <li><%= url.popularity %></li>
         <li><%= url.title %></li>
       </ul>

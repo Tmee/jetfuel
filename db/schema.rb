@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150206050408) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "popularity", default: 0
-    t.string   "title",      default: "No Title rFound"
+    t.string   "title",      default: "No Title Found"
   end
 
 end
