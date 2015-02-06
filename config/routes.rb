@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'urls#index'
 
-  get '/:slug', to: 'urls#redirect'
-
-  resources :urls, only: [:create]
+  get 'search', to: 'search#search'
+  resources :urls, only: [:create, :show]
 end
