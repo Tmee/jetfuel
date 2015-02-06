@@ -15,3 +15,7 @@ gem 'spring',        group: :development
 gem 'rspec-rails'
 gem 'capybara'
 gem 'foundation-rails', '~> 5.4.5.0'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'openurl'
+gem 'nokogiri'
