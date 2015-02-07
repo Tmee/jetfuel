@@ -4,8 +4,6 @@ class Url < ActiveRecord::Base
 
   before_save :generate_slug, :set_title, :set_favicon
 
-  scope :popularity_up, -> { where(popularity: "popularity up")}
-
 
   def like
     increment!(:popularity)
