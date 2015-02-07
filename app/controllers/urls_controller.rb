@@ -2,7 +2,6 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all.order(popularity: :desc)
-    @states = ['popularity up','popularity down','recent','old']
   end
 
   def create
