@@ -1,7 +1,11 @@
+   <div class="filter">
+      <label>Filter By Status</label>
+        <%= select("order", "filter_state", @states, {include_blank: true}, style: "left: 22%" ) %>
+        <%= link_to "Refresh All Orders", urls_path %>
+    </div>
 <% @urls.each do |url|%>
   <div class="large-4 small-6 columns">
     <div class="panel panel-fix">
-
       <div class="row">
         <div class="large-6 columns">
           <%= image_tag "#{url.favicon}", size: "35x35"%>

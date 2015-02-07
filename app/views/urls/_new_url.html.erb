@@ -1,6 +1,6 @@
 <div class="text-center">
-<%=form_for Url.new do |f|%>
-  <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new' %>
-  <%= f.submit "Begin The Shortening", class: 'button small round'%>
-<%end%><br>
+  <%=form_for Url.new, :html => {:'data-abide' => true} do |f|%>
+    <%= f.url_field :full_url, placeholder: "Please include http://", id: 'url_new', :required => true %>
+    <%= f.submit "Begin The Shortening", class: 'button small round'%>
+  <%end%><br>
 </div>

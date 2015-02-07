@@ -2,12 +2,15 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all.order(popularity: :desc)
+    @states = ['popularity up','popularity down','recent','old']
   end
 
   def create
     url = Url.create!(url_params)
     if url.save
       redirect_to root_path, notice: "Thanks for using Shortener"
+    else
+      redirect_to root_path, alert: "sorry, something went wrong. Try that again"
     end
   end
 
